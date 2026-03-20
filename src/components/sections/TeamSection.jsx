@@ -6,6 +6,9 @@ import { X, Facebook, Twitter, Instagram } from "lucide-react"; // Adicionado í
 import { Dialog } from "primereact/dialog";
 import content from "../../content/content";
 import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
+import ButtonReflexo from "../../components/interactives/ButtonReflexo";
+import { defaultButtonThemes } from "../../context/UseContextArchive";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
 function TeamSectionNew({ colorMode }) {
   const [visible, setVisible] = useState(false);
@@ -116,6 +119,19 @@ function TeamSectionNew({ colorMode }) {
             </motion.div>
           ))}
         </div>
+        <MotionDivDownToUp className={`flex justify-center w-full mt-10`}>
+          <ButtonReflexo
+            label="Agende seu atendimento"
+            icon={content.texts.svgs.wpp}
+            link={content.texts.links.ctaWhatsapp}
+            className={`clickevent`}
+            bgClass={
+              colorMode === "defaultDark" || colorMode === "light"
+                ? defaultButtonThemes.light
+                : defaultButtonThemes.dark
+            }
+          />
+        </MotionDivDownToUp>
 
         {/* Modal (Mantido da sua estrutura) */}
         <Dialog

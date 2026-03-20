@@ -3,8 +3,11 @@ import content from "../../content/content";
 import { Carousel } from "primereact/carousel";
 import SectionArea from "../sectionElements/SectionArea";
 import SectionWrapper from "../sectionElements/SectionWrapper";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Link, Star } from "lucide-react";
 import imgGoogle from "../../assets/imgs/logo/logoGoogle.webp";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import ButtonReflexo from "../interactives/ButtonReflexo";
+import { defaultButtonThemes } from "../../context/UseContextArchive";
 
 function SocialProof({ colorMode }) {
   const responsiveOptions = [
@@ -150,6 +153,20 @@ function SocialProof({ colorMode }) {
               />
             </div>
           </div>
+
+          <MotionDivDownToUp className={`flex justify-center w-full mt-10`}>
+            <a
+              href="https://share.google/IxjrJeoG9DlGad4bc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 cursor-pointer hover:scale-95 duration-500 transition-all underline"
+            >
+              <span>
+                <Link width={18} />
+              </span>{" "}
+              Veja mais avaliações no Google
+            </a>
+          </MotionDivDownToUp>
         </section>
       </SectionWrapper>
     </SectionArea>

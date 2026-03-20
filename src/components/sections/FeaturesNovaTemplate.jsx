@@ -107,7 +107,7 @@ function FeaturesNovaTemplate({ colorMode, frasesDestaque, accordion, modal }) {
       <SectionWrapper>
         <section className="relative font-mainFont w-full">
           <div className="mx-auto">
-            <div className="flex flex-col-reverse desktop1:flex-row gap-10 desktop1:gap-4 items-center">
+            <div className="flex flex-col-reverse gap-10 items-center desktop2:flex-row">
               {/* Imagem com destaque */}
               <div>
                 {" "}
@@ -115,10 +115,10 @@ function FeaturesNovaTemplate({ colorMode, frasesDestaque, accordion, modal }) {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="relative order-2 lg:order-1 w-full m-auto"
+                  className="relative order-2 lg:order-1 w-full m-auto desktop1:max-w-full"
                 >
                   <div
-                    className={`relative overflow-hidden rounded-3xl shadow-2xl desktop1:w-[90%]  ${image}`}
+                    className={`relative overflow-hidden rounded-3xl shadow-2xl desktop1:w-[90%] mx-auto ${image}`}
                   >
                     <img
                       src={content.texts.features.imgFeatures}
@@ -181,7 +181,7 @@ function FeaturesNovaTemplate({ colorMode, frasesDestaque, accordion, modal }) {
               </div>
 
               {/* Conteúdo das features */}
-              <div className="order-1 lg:order-2 space-y-8 w-full desktop1:w-[80%] desktop2:w-[50%]">
+              <div className="order-1 lg:order-2 space-y-8 w-full desktop1:w-full">
                 <SectionHeaderNovo
                   miniTitle={content.texts.features.miniTag}
                   title={content.texts.features.FirstPart}

@@ -1,41 +1,42 @@
-import React from 'react'
-import SectionArea from '../sectionElements/SectionArea'
-import SectionWrapper from '../sectionElements/SectionWrapper'
-import SectionHeaderNovo from '../sectionElements/SectionHeaderNovo'
-import CardsImportants from '../cards/CardsImportants'
-import content from '../../content/content'
-import ButtonReflexo from '../../components/interactives/ButtonReflexo'
-import MotionDivDownUp from '../animation/MotionDivDownToUp'
-import { defaultButtonThemes } from '../../context/UseContextArchive'
+import React from "react";
+import SectionArea from "../sectionElements/SectionArea";
+import SectionWrapper from "../sectionElements/SectionWrapper";
+import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
+import CardsImportants from "../cards/CardsImportants";
+import content from "../../content/content";
+import MotionDivDownUp from "../animation/MotionDivDownToUp";
+
+import ButtonReflexo from "../../components/interactives/ButtonReflexo";
+import { defaultButtonThemes } from "../../context/UseContextArchive";
 
 function Important({ colorMode }) {
-  const listCards = Object.values(content.texts.important.cards)
-  let backgroundMode, text, textOpacity, textDestaque
+  const listCards = Object.values(content.texts.important.cards);
+  let backgroundMode, text, textOpacity, textDestaque;
 
   switch (colorMode) {
-    case 'light':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      textDestaque = 'text-primaryDark'
-      break
-    case 'dark':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosBranca'
-      textOpacity = 'text-corOutrosTextosBranca'
-      textDestaque = 'text-primaryDark'
-      break
-    case 'defaultDark':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      textDestaque = 'text-primaryDark'
-      break
-    case 'defaultLight':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      textDestaque = 'text-primaryDark'
+    case "light":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      textDestaque = "text-primaryDark";
+      break;
+    case "dark":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      textDestaque = "text-primaryDark";
+      break;
+    case "defaultDark":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      textDestaque = "text-primaryDark";
+      break;
+    case "defaultLight":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      textDestaque = "text-primaryDark";
   }
 
   return (
@@ -73,7 +74,7 @@ function Important({ colorMode }) {
             link={content.texts.links.ctaWhatsapp}
             className={`clickevent`}
             bgClass={
-              colorMode === 'defaultDark' || colorMode === 'light'
+              colorMode === "defaultDark" || colorMode === "light"
                 ? defaultButtonThemes.light
                 : defaultButtonThemes.dark
             }
@@ -81,7 +82,7 @@ function Important({ colorMode }) {
         </MotionDivDownUp>
       </SectionWrapper>
     </SectionArea>
-  )
+  );
 }
 
-export default Important
+export default Important;

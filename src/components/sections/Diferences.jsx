@@ -128,7 +128,7 @@ export function Diferences({ colorMode }) {
               </div>
             </div>
           </div>
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-10">
             <ButtonReflexo
               icon={
                 <svg

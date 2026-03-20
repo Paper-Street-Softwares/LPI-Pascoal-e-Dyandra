@@ -6,6 +6,7 @@ import { Check } from "lucide-react";
 import content from "../../content/content.jsx";
 import ButtonReflexo from "../interactives/ButtonReflexo.jsx";
 import { defaultButtonThemes } from "../../context/UseContextArchive.jsx";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp.jsx";
 
 export function Preference({ colorMode }) {
   let backgroundMode,
@@ -127,6 +128,19 @@ export function Preference({ colorMode }) {
                 </div>
               </div>
             </div>
+            <MotionDivDownToUp className={`flex justify-center w-full mt-10`}>
+              <ButtonReflexo
+                label="Falar agora com o escritório"
+                icon={content.texts.svgs.wpp}
+                link={content.texts.links.ctaWhatsapp}
+                className={`clickevent`}
+                bgClass={
+                  colorMode === "defaultDark" || colorMode === "light"
+                    ? defaultButtonThemes.light
+                    : defaultButtonThemes.dark
+                }
+              />
+            </MotionDivDownToUp>
           </div>
         </div>
       </SectionWrapper>
