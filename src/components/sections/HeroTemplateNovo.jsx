@@ -169,7 +169,9 @@ function HeroTemplateNovo({
                 className={` text-[22px] phone2:text-3xl phone3:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] desktop1:text-start ${text} `}
               >
                 {content.texts.hero.FirstPart}{" "}
-                <span className={`${textDestaque}`}>
+                <span
+                  className={`${textDestaque} text-[15px] phone2:text-[21px] phone3:text-[25px] md:text-[34px] lg:text-[42px] xl:text-[50px]`}
+                >
                   {content.texts.hero.Destaque}
                 </span>{" "}
                 {content.texts.hero.SecondPart}

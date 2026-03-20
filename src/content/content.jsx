@@ -140,9 +140,7 @@ const content = {
       miniTag: <>Pascoal & Dyandra Advocacia</>,
       FirstPart: <span>Direito Trabalhista e Previdenciário </span>,
       Destaque: (
-        <span className="destaque relative italic font-light">
-          OAB/SP 54.313
-        </span>
+        <p className="destaque relative italic font-light">OAB/SP 54.313</p>
       ),
       SecondPart: <span></span>,
       subtitle: (
@@ -640,7 +638,12 @@ const content = {
       cards: {
         card1: {
           img: img1,
-          name: <>Alexandre Pascoal Marques - OAB/SP 270.924</>,
+          name: (
+            <>
+              Alexandre Pascoal Marques <br />
+              <span className="text-lg"> OAB/SP 270.924</span>
+            </>
+          ),
           role: <>Sócio e Diretor Executivo</>,
           description: (
             <>
@@ -656,7 +659,12 @@ const content = {
         },
         card2: {
           img: img2,
-          name: <>Flávia Dyandra - OAB/SP 352.455</>,
+          name: (
+            <>
+              Flávia Dyandra - <br />
+              <span className="text-lg"> OAB/SP 352.455</span>
+            </>
+          ),
           role: <>Sócia e Diretora Operacional</>,
           description: (
             <>
