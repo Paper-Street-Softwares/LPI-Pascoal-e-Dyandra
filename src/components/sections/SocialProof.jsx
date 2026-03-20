@@ -78,7 +78,7 @@ function SocialProof({ colorMode }) {
     <SectionArea paddingTopAndBottom={false} className={`bg-transparent`}>
       <SectionWrapper>
         <section
-          className={`rounded-xl p-5 w-full desktop1:px-10 pt-10 pb-5 max-w-[1215px] my-6 tablet1:my-10 desktop1:my-12 ${bgContainer}`}
+          className={`rounded-xl p-5 w-full desktop1:px-10 py-10 max-w-[1215px] my-6 tablet1:my-10 desktop1:my-12 ${bgContainer}`}
         >
           <div className="flex w-full justify-between relative flex-col desktop1:flex-row desktop1:gap-6">
             <div className="font-secondFont tablet1:w-[400px] desktop1:w-[310px] mx-auto desktop1:mx-0">
@@ -97,7 +97,7 @@ function SocialProof({ colorMode }) {
                 <h1
                   className={`text-title4 max-w-[310px] mx-auto desktop1:m-0 font-bold leading-10 ${text}`}
                 >
-                  O que nossos clientes dizem
+                  O que dizem nossos clientes?
                 </h1>
               </section>
 
@@ -154,16 +154,15 @@ function SocialProof({ colorMode }) {
             </div>
           </div>
 
-          <MotionDivDownToUp className={`flex justify-center w-full mt-10`}>
+          <MotionDivDownToUp
+            className={`flex justify-center w-full text-center`}
+          >
             <a
               href="https://share.google/IxjrJeoG9DlGad4bc"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 cursor-pointer hover:scale-95 duration-500 transition-all underline"
+              className="flex desktop1:cursor-pointer hover:scale-95 duration-500 transition-all underline"
             >
-              <span>
-                <Link width={18} />
-              </span>{" "}
               Veja mais avaliações no Google
             </a>
           </MotionDivDownToUp>

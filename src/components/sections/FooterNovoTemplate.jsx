@@ -103,6 +103,13 @@ function FooterNovoTemplate({
                 >
                   {content.texts.footer.footerText}
                 </p>
+
+                <>
+                  <h1 className={`font-bold font-secondFont ${text}`}>
+                    Atendimento:
+                  </h1>
+                  Presencial ou Online para todo Brasil
+                </>
                 <p
                   className={`leading-relaxed font-secondFont font-light ${textOpacity}`}
                 >

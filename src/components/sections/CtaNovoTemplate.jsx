@@ -32,7 +32,7 @@ function CtaNovoTemplate({ colorMode, container }) {
       break;
     case "defaultDark":
       text = "text-corTitulosBranca";
-      textOpacity = "text-corTitulosBranca/60";
+      textOpacity = "text-white";
       textDestaque = "text-primaryLight";
       backgroundMode = "bg-transparent";
       miniTagCtaDark = "text-primaryLight";

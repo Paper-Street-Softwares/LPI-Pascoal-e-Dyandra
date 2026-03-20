@@ -52,7 +52,7 @@ function SectionHeaderNovo({
       borderCard = "border-border";
       arrowColor = "text-mutedForeground group-hover:text-primaryDark";
       imageBorder = "border-white";
-      miniTag = "text-primaryDark";
+      miniTag = "text-destaque";
       break;
 
     case "defaultLight":

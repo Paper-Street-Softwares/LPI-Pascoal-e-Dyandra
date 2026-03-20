@@ -28,6 +28,7 @@ export default {
         terciary: "#F4F0E6",
         quartenary: "#FCFBFA",
         borderImage: "#292929",
+        destaque: "#6C4900",
 
         // Copys
         corTitulosBranca: "#FFFFFF",

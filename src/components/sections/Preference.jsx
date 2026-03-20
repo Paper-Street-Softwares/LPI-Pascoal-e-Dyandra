@@ -41,9 +41,9 @@ export function Preference({ colorMode }) {
       backgroundMode = "bg-transparent";
       text = "text-corTitulosPreto";
       textOpacity = "text-corOutrosTextosPreto";
-      textDestaque = "text-primaryLight";
+      textDestaque = "text-destaque";
       bgCards = "bg-white shadow";
-      borderSVG = "border-primaryLight";
+      borderSVG = "border-destaque";
       bgContainer = "bg-terciary";
       break;
 
@@ -69,14 +69,14 @@ export function Preference({ colorMode }) {
             <div
               className={`backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl ${bgContainer}`}
             >
-              <div className="p-8 md:p-12 bg-secondary">
+              <div className="p-8 md:p-12 bg-white">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="space-y-6 text-left">
                     <motion.div
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8, ease: "easeOut" }}
-                      className={`text-sm font-bold tracking-wides uppercase block font-secondFont ${text}`}
+                      className={`text-sm font-bold tracking-wides uppercase block font-secondFont text-destaque`}
                     >
                       {content.texts.preferences.miniTag}
                     </motion.div>
@@ -112,9 +112,7 @@ export function Preference({ colorMode }) {
                         >
                           <span>
                             {" "}
-                            <item.icon
-                              className={`w-5 h-5 text-primaryLight`}
-                            />
+                            <item.icon className={`w-5 h-5 text-destaque`} />
                           </span>
                         </div>
                         <span

@@ -38,9 +38,9 @@ function TeamSectionNew({ colorMode }) {
       textTitle: "text-corTitulosPreto", // Laranja da imagem
       cardBg: "bg-white",
       nameText: "text-gray-800",
-      roleText: "text-corOutrosTextosPreto font-bold",
+      roleText: "text-destaque font-bold",
       descText: "text-gray-600",
-      imgBorder: "border-[4px] border-secondary", // Tom pêssego da imagem
+      imgBorder: "border-[4px] border-destaque", // Tom pêssego da imagem
     },
   };
 

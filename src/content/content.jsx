@@ -105,7 +105,7 @@ export const infos = {
   youtubeProfile: "",
 
   whatsappDefaultMessage:
-    "Olá! Vim através do site de vocês e gostaria de tirar umas dúvidas.",
+    "Olá, vim pelo site e preciso de orientação. Poderia me ajudar?",
   whatsChatDefaultMessage:
     "Gostaria de falar conosco agora mesmo? Clque abaixo 👇",
   slogan: "",
@@ -137,12 +137,14 @@ const content = {
           {/* 🚨 */}
         </>
       ),
-      miniTag: <>Pascoal & Dyandra Advocacia</>,
-      FirstPart: <span>Direito Trabalhista e Previdenciário </span>,
+      miniTag: <>OAB/SP 54.313</>,
+      FirstPart: <span></span>,
       Destaque: (
-        <p className="destaque relative italic font-light">OAB/SP 54.313</p>
+        <p className="destaque relative font-light">
+          Direito Trabalhista e Previdenciário
+        </p>
       ),
-      SecondPart: <span></span>,
+      SecondPart: <span> Pascoal & Dyandra Advocacia</span>,
       subtitle: (
         <p>
           Atuação dedicada à defesa dos direitos do trabalhador, com atendimento
@@ -151,7 +153,7 @@ const content = {
           <br />
           <br />
           Especial atenção a demandas envolvendo{" "}
-          <span className="font-bold">
+          <span className="font-bold text-primaryLight">
             motoristas de caminhão com vínculo CLT
           </span>
           , compreendendo as particularidades da profissão, como jornadas
@@ -170,9 +172,9 @@ const content = {
         icon: <> {/* ⚠️ */}</>,
         iconTwo: <></>,
         text: (
-          <p>
+          <p className="text-primaryLight">
             ✅ Com{" "}
-            <span className="font-bold">
+            <span className="font-bold ">
               18 anos de experiência e atuação em mais de 2.000 ações
               trabalhistas.
             </span>
@@ -492,13 +494,16 @@ const content = {
       miniTag: <>FALE CONOSCO</>,
       title: (
         <h1>
-          No Pascoal & Dyandra Advocacia, cada demanda é conduzida com atenção,
-          seriedade e respeito às particularidades de cada caso.
+          Atuação jurídica com responsabilidade, clareza e ética profissional
         </h1>
       ),
       subtitle: (
         <div>
           <p className="mb-6 font-secondFont">
+            No Pascoal & Dyandra Advocacia, cada demanda é conduzida com
+            atenção, seriedade e respeito às particularidades de cada caso.
+            <br />
+            <br />
             Se você precisa de orientação nas áreas de Direito Trabalhista ou
             Previdenciário, nossa equipe está à disposição para oferecer uma
             análise jurídica responsável, fundamentada e conduzida com ética

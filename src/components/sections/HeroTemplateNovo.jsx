@@ -75,7 +75,8 @@ function HeroTemplateNovo({
       text = "text-corTitulosBranca";
       textOpacity = "text-corOutrosTextosBranca";
       textDestaque = "text-primaryLight";
-      bgMinitag = "bg-transparent border-primaryLight text-primaryLight";
+      bgMinitag =
+        "bg-transparent border-corOutrosTextosBranca text-corOutrosTextosBranca";
       // textObs = 'text-green-500'
       image = " border-[8px]";
       bgAlertHero = "bg-black text-white/60";
@@ -166,11 +167,11 @@ function HeroTemplateNovo({
                 {content.texts.hero.miniTag}
               </div>
               <h1
-                className={` text-[22px] phone2:text-3xl phone3:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] desktop1:text-start ${text} `}
+                className={` text-[22px] phone2:text-4xl phone3:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tablet2:font-medium leading-[1.1] desktop1:text-start ${text} `}
               >
                 {content.texts.hero.FirstPart}{" "}
                 <span
-                  className={`${textDestaque} text-[15px] phone2:text-[21px] phone3:text-[25px] md:text-[34px] lg:text-[42px] xl:text-[50px]`}
+                  className={`${textDestaque} text-[15px] phone2:text-[21px] phone3:text-[25px] md:text-[36px]`}
                 >
                   {content.texts.hero.Destaque}
                 </span>{" "}
@@ -212,8 +213,8 @@ function HeroTemplateNovo({
                   {content.texts.hero.obsHero.text}
                 </h1>
 
-                <p className="mb-2">📍 Sede em Sorocaba/SP</p>
-                <p>🌎 Atendimento online para todo o Brasil</p>
+                <p className="mb-2">📍 Sede em Sorocaba/SP.</p>
+                <p>🌎 Atendimento online para todo o Brasil.</p>
               </div>
               <div className="flex flex-col gap-4 py-2 phone2:py-4">
                 <ButtonReflexo
