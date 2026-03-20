@@ -95,7 +95,7 @@ export default function Index() {
 
           <AlternatingSection index={3} colorMode={colorMode}>
             <Suspense>
-              <TeamSection />
+              <TeamSection colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 

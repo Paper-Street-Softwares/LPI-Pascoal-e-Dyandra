@@ -30,6 +30,15 @@ function TeamSectionNew({ colorMode }) {
       descText: "text-gray-300",
       imgBorder: "border-[6px] border-borderImage",
     },
+    defaultDark: {
+      background: "bg-transparent]", // Cinza claro como no fundo da imagem
+      textTitle: "text-corTitulosPreto", // Laranja da imagem
+      cardBg: "bg-white",
+      nameText: "text-gray-800",
+      roleText: "text-primaryLight font-bold",
+      descText: "text-gray-600",
+      imgBorder: "border-[6px] border-primaryLight", // Tom pêssego da imagem
+    },
   };
 
   const mode = styles[colorMode] || styles.light;
@@ -69,6 +78,11 @@ function TeamSectionNew({ colorMode }) {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
+              <span
+                className={`text-xs uppercase tracking-widest ${mode.roleText}`}
+              >
+                {member.role}
+              </span>
 
               {/* Informações */}
               <h3 className={`text-xl font-bold mb-4 ${mode.nameText}`}>
@@ -83,12 +97,6 @@ function TeamSectionNew({ colorMode }) {
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
                 "
               </p>
-
-              <span
-                className={`text-xs uppercase tracking-widest  ${mode.roleText}`}
-              >
-                {member.role}
-              </span>
 
               {/* Redes Sociais */}
               {/* <div className="flex gap-4 mt-auto text-gray-800">
