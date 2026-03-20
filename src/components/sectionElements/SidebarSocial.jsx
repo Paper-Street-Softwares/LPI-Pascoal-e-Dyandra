@@ -108,7 +108,7 @@ export default function SidebarSocial({ colorMode, mode = "blog" }) {
                     <img
                       src={content.texts.navbar.solidLogo.img}
                       alt={content.texts.navbar.solidLogo.alt}
-                      className="w-[80%] h-auto"
+                      className="w-[90%] h-auto"
                     />
                   </span>
                   <span>
