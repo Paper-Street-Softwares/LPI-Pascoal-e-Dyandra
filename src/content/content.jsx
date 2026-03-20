@@ -641,7 +641,7 @@ const content = {
           name: (
             <>
               Alexandre Pascoal Marques <br />
-              <span className="text-lg"> OAB/SP 270.924</span>
+              <span className="text-sm"> OAB/SP 270.924</span>
             </>
           ),
           role: <>Sócio e Diretor Executivo</>,
@@ -661,8 +661,8 @@ const content = {
           img: img2,
           name: (
             <>
-              Flávia Dyandra - <br />
-              <span className="text-lg"> OAB/SP 352.455</span>
+              Flávia Dyandra <br />
+              <span className="text-sm"> OAB/SP 352.455</span>
             </>
           ),
           role: <>Sócia e Diretora Operacional</>,

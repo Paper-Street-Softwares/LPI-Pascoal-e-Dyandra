@@ -2,220 +2,127 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SectionArea from "../sectionElements/SectionArea";
 import SectionWrapper from "../sectionElements/SectionWrapper";
-import { ArrowRight, CheckCircle2, X } from "lucide-react";
+import { X, Facebook, Twitter, Instagram } from "lucide-react"; // Adicionado ícones sociais
 import { Dialog } from "primereact/dialog";
 import content from "../../content/content";
-import ButtonReflexo from "../interactives/ButtonReflexo";
-import { Button } from "../interactives/ButtonNovoTemplate";
-import { Phone } from "lucide-react";
+import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
 
-function TeamSectionNew({ ButtonModal, colorMode }) {
+function TeamSectionNew({ colorMode }) {
   const [visible, setVisible] = useState(false);
-  const [modalTitle, setModalTitle] = useState("");
 
-  const onClick = () => {
-    setModalTitle(content.texts.about.title);
-    setVisible(true);
+  // Mapeamento de estilos baseado no seu switch original
+  const styles = {
+    light: {
+      background: "bg-transparent]", // Cinza claro como no fundo da imagem
+      textTitle: "text-corTitulosPreto", // Laranja da imagem
+      cardBg: "bg-white",
+      nameText: "text-gray-800",
+      roleText: "text-gray-900 font-bold",
+      descText: "text-gray-600",
+      imgBorder: "border-[6px] border-primaryLight", // Tom pêssego da imagem
+    },
+    dark: {
+      background: "bg-darkOpacity",
+      textTitle: "text-primaryLight",
+      cardBg: "bg-gray-800/40",
+      nameText: "text-white",
+      roleText: "text-primaryLight font-bold",
+      descText: "text-gray-300",
+      imgBorder: "border-[6px] border-borderImage",
+    },
   };
 
-  // Definindo classes conforme colorMode
-  let backgroundMode,
-    text,
-    textOpacity,
-    cardBg,
-    iconBg,
-    buttonBg,
-    textDestaque,
-    image,
-    miniTagColor;
+  const mode = styles[colorMode] || styles.light;
 
-  switch (colorMode) {
-    case "light":
-      backgroundMode = "bg-white";
-      text = "text-corTitulosPreto";
-      textOpacity = "text-corOutrosTextosPreto";
-      textDestaque = "text-primaryDark";
-      cardBg = "bg-white/10";
-      iconBg = "bg-primaryDark/10 text-primaryDark";
-      buttonBg = "bg-primaryDark";
-      miniTagColor = "text-primaryDark";
-      image = " border-[8px] border-white";
-      break;
-    case "dark":
-      backgroundMode = "bg-darkOpacity";
-      text = "text-corTitulosBranca";
-      textOpacity = "text-corOutrosTextosBranca";
-      textDestaque = "text-primaryLight";
-      cardBg = "bg-gray-800/20";
-      iconBg = "bg-primaryLight/20 text-primaryLight";
-      buttonBg = "bg-primaryLight";
-      miniTagColor = "text-primaryDark";
-      image = " border-[8px] border-borderImage";
-      break;
-    default:
-      backgroundMode = "bg-transparent";
-      text = "text-corTitulosPreto";
-      textOpacity = "text-corOutrosTextosPreto";
-      textDestaque = "text-primaryDark";
-      cardBg = "bg-white/10";
-      iconBg = "bg-primaryDark/10 text-primaryDark";
-      buttonBg = "bg-primaryDark";
-      miniTagColor = "text-primaryDark";
-      image = " border-[8px] border-white";
-  }
+  // Transformando o objeto de cards do seu 'content' em um array para o map
+  const teamMembers = Object.values(content.texts.team.cards);
 
   return (
-    <SectionArea
-      data-theme={colorMode}
-      id="about"
-      className={`${backgroundMode}`}
-    >
-      <SectionWrapper className="desktop1:max-w-[900px]">
-        <div className="mb-16 text-center">
-          <span
-            className={`${textDestaque} font-bold font-secondFont tracking-wider uppercase text-xs mb-2 block`}
-          >
-            {content.texts.team.miniTag}
-          </span>
-          <h1
-            className={`text-3xl md:text-4xl font-mainFont font-medium mb-4 ${text} `}
-          >
-            {content.texts.team.title}
-          </h1>
+    <SectionArea id="about" className={`${mode.background} py-20`}>
+      <SectionWrapper>
+        {/* Header da Seção */}
+        <SectionHeaderNovo
+          miniTitle={content.texts.team.miniTag}
+          title={content.texts.team.title}
+          subtitle={content.texts.team.subtitle}
+          colorMode={colorMode}
+        />
 
-          <p className={`font-secondFont font-light ${textOpacity}`}>
-            {content.texts.team.subtitle}
-          </p>
+        {/* Grid de Cards */}
+        <div className="grid grid-cols-1 tablet2:grid-cols-2 max-w-[400px] tablet2:max-w-[700px] desktop1:max-w-[800px] gap-6 font-secondFont">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`${mode.cardBg} rounded-xl p-8 shadow-lg flex flex-col items-center text-center transition-all hover:shadow-2xl`}
+            >
+              {/* Avatar Circular */}
+              <div
+                className={`relative w-40 h-40 mb-6 rounded-full overflow-hidden ${mode.imgBorder}`}
+              >
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+
+              {/* Informações */}
+              <h3 className={`text-xl font-bold mb-4 ${mode.nameText}`}>
+                {member.name}
+              </h3>
+
+              <p
+                className={`text-sm italic mb-6 leading-relaxed ${mode.descText} font-serif`}
+              >
+                "
+                {member.description ||
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+                "
+              </p>
+
+              <span
+                className={`text-xs uppercase tracking-widest  ${mode.roleText}`}
+              >
+                {member.role}
+              </span>
+
+              {/* Redes Sociais */}
+              {/* <div className="flex gap-4 mt-auto text-gray-800">
+                <Facebook
+                  size={18}
+                  className="cursor-pointer hover:text-orange-500 transition-colors"
+                />
+                <Twitter
+                  size={18}
+                  className="cursor-pointer hover:text-orange-500 transition-colors"
+                />
+                <Instagram
+                  size={18}
+                  className="cursor-pointer hover:text-orange-500 transition-colors"
+                />
+              </div> */}
+            </motion.div>
+          ))}
         </div>
 
-        <section className="w-full relative overflow-visible">
-          <div className="mx-aut flex flex-col gap-20 relative z-10">
-            <div className="flex flex-col-reverse desktop1:flex-row-reverse desktop1:gap-16 items-center">
-              {/* Conteúdo textual */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="space-y-8"
-              >
-                <div className="max-w-[388px]">
-                  <span
-                    className={`font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
-                  >
-                    {content.texts.team.cards.card1.role}
-                  </span>
-                  <h1
-                    className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col gap-0 ${text}`}
-                  >
-                    {" "}
-                    {content.texts.team.cards.card1.name}
-                  </h1>
-
-                  <p
-                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 ${textOpacity}`}
-                  >
-                    {content.texts.team.cards.card1.description}
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Imagem com destaque */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="relative w-full desktop1:max-w-[400px] m-auto overflow-visible mb-6 desktop1:mb-0"
-              >
-                <div className="relative rounded-3xl shadow-2xl ring-1 max-w-[386px] mx-auto ring-black/5">
-                  {/* CLIP DA IMAGEM */}
-                  <div
-                    className={`relative rounded-3xl overflow-hidden ${image}`}
-                  >
-                    <img
-                      src={content.texts.team.cards.card1.img}
-                      alt="Foto dos advogados"
-                      className="w-full max-h-96 object-cover object-top scale-105 hover:scale-100 rounded-2xl transition-transform duration-700 "
-                      width={798}
-                      height={798}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            <div className="flex flex-col-reverse desktop1:flex-row desktop1:gap-16 items-center">
-              {/* Conteúdo textual */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="space-y-8"
-              >
-                <div className="max-w-[388px]">
-                  <span
-                    className={`font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
-                  >
-                    {content.texts.team.cards.card2.role}
-                  </span>
-                  <h1
-                    className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col gap-0 ${text}`}
-                  >
-                    {" "}
-                    {content.texts.team.cards.card2.name}
-                  </h1>
-
-                  <p
-                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 ${textOpacity}`}
-                  >
-                    {content.texts.team.cards.card2.description}
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Imagem com destaque */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="relative w-full desktop1:max-w-[400px] m-auto overflow-visible mb-6 desktop1:mb-0"
-              >
-                <div className="relative rounded-3xl shadow-2xl ring-1 max-w-[386px] mx-auto ring-black/5">
-                  {/* CLIP DA IMAGEM */}
-                  <div
-                    className={`relative rounded-3xl overflow-hidden ${image}`}
-                  >
-                    <img
-                      src={content.texts.team.cards.card2.img}
-                      alt="Foto dos advogados"
-                      className="w-full max-h-96 object-cover object-top scale-105 hover:scale-100 rounded-2xl transition-transform duration-700 "
-                      width={726}
-                      height={726}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Modal */}
-          <Dialog
-            className="font-secondFont bg-white p-4 rounded-md"
-            closeIcon={<X size={20} />}
-            header={
-              <span className="font-mainFont px-4">
-                {content.texts.about.titleModal}
-              </span>
-            }
-            visible={visible}
-            onHide={() => setVisible(false)}
-            style={{ width: "50vw" }}
-            breakpoints={{
-              "4000px": "641px",
-              "1024px": "641px",
-              "641px": "85vw",
-            }}
-          ></Dialog>
-        </section>
+        {/* Modal (Mantido da sua estrutura) */}
+        <Dialog
+          className="font-secondFont bg-white p-4 rounded-md"
+          closeIcon={<X size={20} />}
+          header={
+            <span className="font-mainFont px-4">
+              {content.texts.about.titleModal}
+            </span>
+          }
+          visible={visible}
+          onHide={() => setVisible(false)}
+          style={{ width: "50vw" }}
+          breakpoints={{ "1024px": "641px", "641px": "90vw" }}
+        />
       </SectionWrapper>
     </SectionArea>
   );
