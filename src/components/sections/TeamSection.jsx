@@ -31,13 +31,13 @@ function TeamSectionNew({ colorMode }) {
       imgBorder: "border-[6px] border-borderImage",
     },
     defaultDark: {
-      background: "bg-transparent]", // Cinza claro como no fundo da imagem
+      background: "bg-transparent", // Cinza claro como no fundo da imagem
       textTitle: "text-corTitulosPreto", // Laranja da imagem
       cardBg: "bg-white",
       nameText: "text-gray-800",
-      roleText: "text-primaryLight font-bold",
+      roleText: "text-corOutrosTextosPreto font-bold",
       descText: "text-gray-600",
-      imgBorder: "border-[6px] border-primaryLight", // Tom pêssego da imagem
+      imgBorder: "border-[4px] border-secondary", // Tom pêssego da imagem
     },
   };
 
@@ -66,7 +66,7 @@ function TeamSectionNew({ colorMode }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`${mode.cardBg} rounded-xl p-8 shadow-lg flex flex-col items-center text-center transition-all hover:shadow-2xl`}
+              className={`${mode.cardBg} rounded-xl p-8 flex flex-col items-center text-center transition-all `}
             >
               {/* Avatar Circular */}
               <div

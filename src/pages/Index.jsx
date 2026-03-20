@@ -47,6 +47,7 @@ import SocialProof from "../components/sections/SocialProof";
 import Depositions from "../components/sections/Depositions";
 import { NavbarRender } from "../context/UseContextArchive";
 import TeamSection from "../components/sections/TeamSection";
+import { Preference } from "../components/sections/Preference";
 
 export default function Index() {
   const { colorMode, setColorMode } = useColorMode();
@@ -60,14 +61,28 @@ export default function Index() {
 
         <main>
           <AlternatingSection index={0} colorMode={colorMode} forcePrimaryDark>
-            <HeroTemplateNovo colorMode={colorMode} obs={true} obsTwo={false} />
+            <HeroTemplateNovo
+              colorMode={colorMode}
+              obs={false}
+              obsTwo={false}
+            />
+          </AlternatingSection>
+
+          <AlternatingSection index={1} colorMode={colorMode}>
+            <SocialProof colorMode={colorMode} />
+          </AlternatingSection>
+
+          <AlternatingSection index={2} colorMode={colorMode}>
+            <Suspense>
+              <Diferences colorMode={colorMode} />
+            </Suspense>
           </AlternatingSection>
 
           {/* <AlternatingSection index={1} colorMode={colorMode}>
             <Important colorMode={colorMode} />
           </AlternatingSection> */}
 
-          <AlternatingSection index={1} colorMode={colorMode}>
+          <AlternatingSection index={3} colorMode={colorMode}>
             <Suspense>
               <FeaturesNovaTemplate
                 colorMode={colorMode}
@@ -78,11 +93,7 @@ export default function Index() {
             </Suspense>
           </AlternatingSection>
 
-          {/* <AlternatingSection index={3} colorMode={colorMode}>
-            <Speed colorMode={colorMode} />
-          </AlternatingSection> */}
-
-          <AlternatingSection index={2} colorMode={colorMode}>
+          <AlternatingSection index={4} colorMode={colorMode}>
             <Suspense>
               <AboutNovoTemplate
                 colorMode={colorMode}
@@ -93,7 +104,7 @@ export default function Index() {
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={3} colorMode={colorMode}>
+          <AlternatingSection index={5} colorMode={colorMode}>
             <Suspense>
               <TeamSection colorMode={colorMode} />
             </Suspense>
@@ -105,29 +116,31 @@ export default function Index() {
             </Suspense>
           </AlternatingSection> */}
 
-          <AlternatingSection index={3} colorMode={colorMode} forcePrimaryDark>
+          <AlternatingSection index={6} colorMode={colorMode}>
             <Suspense>
-              <CtaNovoTemplate colorMode={colorMode} container={true} />
+              <Preference colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={4} colorMode={colorMode}>
+          <AlternatingSection index={7} colorMode={colorMode} forcePrimaryDark>
+            <Suspense>
+              <CtaNovoTemplate colorMode={colorMode} container={false} />
+            </Suspense>
+          </AlternatingSection>
+
+          <AlternatingSection index={8} colorMode={colorMode}>
             <Suspense>
               <StepsNovoTemplate colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 
-          {/* <AlternatingSection index={7} colorMode={colorMode}>
-            <SocialProof colorMode={colorMode} />
-          </AlternatingSection> */}
-
-          <AlternatingSection index={5} colorMode={colorMode}>
+          <AlternatingSection index={9} colorMode={colorMode}>
             <Suspense>
               <FaqNovoTemplate colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={6} colorMode={colorMode} forcePrimaryDark>
+          <AlternatingSection index={10} colorMode={colorMode} forcePrimaryDark>
             <Suspense>
               <FooterNovoTemplate
                 colorMode={colorMode}
@@ -173,25 +186,6 @@ export default function Index() {
           {/* <AlternatingSection index={7} colorMode={colorMode}>
             <Suspense>
               <BlogPosts colorMode={colorMode} />
-            </Suspense>
-          </AlternatingSection> */}
-          {/* <AlternatingSection index={4} colorMode={colorMode} forcePrimaryDark>
-            <Suspense>
-              <CtaNovoTemplate colorMode={colorMode} container={true} />
-            </Suspense>
-          </AlternatingSection> */}
-
-          {/* <AlternatingSection index={4} colorMode={colorMode}>
-            <Suspense>
-              <Diferences colorMode={colorMode} />
-            </Suspense>
-          </AlternatingSection> */}
-
-          {/* DICAS */}
-
-          {/* <AlternatingSection index={3} colorMode={colorMode}>
-            <Suspense>
-              <Cards colorMode={colorMode} />
             </Suspense>
           </AlternatingSection> */}
         </main>

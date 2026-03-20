@@ -48,10 +48,10 @@ function Cards({ colorMode }) {
       backgroundMode = "bg-transparent";
       text = "text-corTitulosPreto";
       textOpacity = "text-corOutrosTextosPreto";
-      iconContainer = " bg-white shadow text-primaryDark";
+      iconContainer = " bg-quartenary shadow text-primaryDark";
       textDestaque = "text-primaryDark";
-      borderT = "border-t-primaryDark";
-      bgCards = "bg-terciary";
+      borderT = "border-t-black";
+      bgCards = "bg-secondary";
       break;
 
     case "defaultLight":
@@ -77,7 +77,7 @@ function Cards({ colorMode }) {
             />
 
             <div className="flex flex-col gap-12 items-center">
-              <div className="flex flex-wrap gap-6 justify-center">
+              <div className="flex flex-wrap gap-6 desktop1:grid desktop1:grid-cols-3 justify-center">
                 {cards.map((item, index) => (
                   <MotionDivDownToUp className="w-full phone3:w-auto">
                     <div
@@ -91,7 +91,7 @@ function Cards({ colorMode }) {
                           {item.icon}
                         </div>
                         <h3
-                          className={`text-xl font-secondFont font-bold text-center ${text}`}
+                          className={`text-sm font-secondFont font-medium text-center ${text}`}
                         >
                           {item.title}
                         </h3>
@@ -101,7 +101,7 @@ function Cards({ colorMode }) {
                 ))}
               </div>
 
-              <MotionDivDownToUp>
+              {/* <MotionDivDownToUp>
                 <div
                   className={`${textOpacity} font-secondFont text-center leading-5 mt-4`}
                 >
@@ -127,7 +127,7 @@ function Cards({ colorMode }) {
                   colorMode={colorMode}
                   className={`clickevent`}
                 />
-              </MotionDivDownToUp>
+              </MotionDivDownToUp> */}
             </div>
           </div>
         </section>

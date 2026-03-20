@@ -141,7 +141,7 @@ function SocialProof({ colorMode }) {
                 ref={carouselRef}
                 value={imagens}
                 numScroll={1}
-                showIndicators={true}
+                showIndicators={false}
                 numVisible={3}
                 showNavigators={false}
                 responsiveOptions={responsiveOptions}

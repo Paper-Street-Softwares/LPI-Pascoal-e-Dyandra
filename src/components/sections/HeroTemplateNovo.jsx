@@ -178,22 +178,43 @@ function HeroTemplateNovo({
               </h1>
 
               <p
-                className={`${navbarHero ? "text-center desktop1:text-start" : "text-start desktop1:text-start"} text-[14px] phone2:text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight ${textOpacity}`}
+                className={`${navbarHero ? "text-center desktop1:text-start" : "text-start desktop1:text-start"} text-[14px] phone2:text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight pb-2 ${textOpacity}`}
               >
                 {content.texts.hero.subtitle}
               </p>
 
-              {/* <div
-                className={`border font-secondFont p-2 rounded-md border-primaryDark text-[8px] phone2:text-[12px] phone3:text-[14px]`}
-              >
-                {topicsCard.map((item, index) => (
-                  <div key={index} className="flex gap-2">
-                    <span className={`${textDestaque}`}>{item.icon}</span>
-                    <p>{item.text}</p>
-                  </div>
-                ))}
-              </div> */}
+              {obs && (
+                <div
+                  className={`flex ${navbarHero ? "justify-center desktop1:justify-start" : "justify-start"} items-start gap-2 desktop1:gap-3 text-sm w-full`}
+                >
+                  <div
+                    className={`font-secondFont font-light flex gap-0 items-start mb-2 ${textOpacity}`}
+                  >
+                    {/* <div className="relative flex mt-1">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                    </div> */}
 
+                    {content.texts.hero.obsHero.text}
+                  </div>
+                  {obsTwo && (
+                    <span
+                      className={`font-secondFont font-light flex gap-2 items-center ${textOpacity}`}
+                    >
+                      <span>{content.texts.hero.obsHero.iconTwo}</span>{" "}
+                      {content.texts.hero.obsHero.textTwo}
+                    </span>
+                  )}
+                </div>
+              )}
+              <div className="max-w-[360px] bg-gradient-to-br from-primaryDark to-primaryDark text-white p-4 phone3:p-6 rounded-xl shadow-xl border border-white/20 font-secondFont flex flex-col gap-3 text-[9.6px] phone2:text-[14.4px] phone3:text-[16.8px]">
+                <h1 className="font-semibold text-paragraph4">
+                  {content.texts.hero.obsHero.text}
+                </h1>
+
+                <p className="mb-2">📍 Sede em Sorocaba/SP</p>
+                <p>🌎 Atendimento online para todo o Brasil</p>
+              </div>
               <div className="flex flex-col gap-4 py-2 phone2:py-4">
                 <ButtonReflexo
                   icon={
@@ -221,35 +242,6 @@ function HeroTemplateNovo({
                   colorMode={colorMode}
                 />
               </div>
-              {/* <hr
-                className={`border-t ${text} ${
-                  colorMode === 'light' ? 'opacity-90' : 'opacity-20'
-                } w-full`}
-              /> */}
-              {obs && (
-                <div
-                  className={`flex ${navbarHero ? "justify-center desktop1:justify-start" : "justify-start"} items-start gap-2 desktop1:gap-3 text-sm w-full`}
-                >
-                  <div
-                    className={`font-secondFont font-light flex gap-0 items-start ${textOpacity}`}
-                  >
-                    {/* <div className="relative flex mt-1">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
-                    </div> */}
-
-                    {content.texts.hero.obsHero.text}
-                  </div>
-                  {obsTwo && (
-                    <span
-                      className={`font-secondFont font-light flex gap-2 items-center ${textOpacity}`}
-                    >
-                      <span>{content.texts.hero.obsHero.iconTwo}</span>{" "}
-                      {content.texts.hero.obsHero.textTwo}
-                    </span>
-                  )}
-                </div>
-              )}
             </div>
 
             {navbarHero && (
@@ -260,6 +252,7 @@ function HeroTemplateNovo({
                 />
               </div>
             )}
+
             {/* Image */}
             <div
               initial={{ opacity: 0, scale: 0.95 }}

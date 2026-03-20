@@ -15,12 +15,12 @@ import imgSteps from "../assets/imgs/steps/imgSteps.webp";
 // import logo2 from '../assets/imgs/parceria/Logo2.webp'
 // import logo3 from '../assets/imgs/parceria/Logo3.webp'
 
-// import imgproof1 from "../assets/imgs/socialProof/socialproof1.webp";
-// import imgproof2 from "../assets/imgs/socialProof/socialproof2.webp";
-// import imgproof3 from "../assets/imgs/socialProof/socialproof3.webp";
-// import imgproof4 from "../assets/imgs/socialProof/socialproof4.webp";
-// import imgproof5 from "../assets/imgs/socialProof/socialproof5.webp";
-// import imgproof6 from "../assets/imgs/socialProof/socialproof6.webp";
+import imgproof1 from "../assets/imgs/socialProof/socialproof1.webp";
+import imgproof2 from "../assets/imgs/socialProof/socialproof2.webp";
+import imgproof3 from "../assets/imgs/socialProof/socialproof3.webp";
+import imgproof4 from "../assets/imgs/socialProof/socialproof4.webp";
+import imgproof5 from "../assets/imgs/socialProof/socialproof5.webp";
+import imgproof6 from "../assets/imgs/socialProof/socialproof6.webp";
 
 import img1 from "../assets/imgs/team/team1.webp";
 import img2 from "../assets/imgs/team/team2.webp";
@@ -176,30 +176,26 @@ const content = {
               18 anos de experiência e atuação em mais de 2.000 ações
               trabalhistas.
             </span>
-            <br />
-            <br />
-            <p className="mb-2">📍 Sede em Sorocaba/SP</p>
-            <p>🌎 Atendimento online para todo o Brasil</p>
           </p>
         ),
         textTwo: <>A_Definir</>,
       },
       secondaryCta: "Contato",
     },
-    // socialProof: {
-    //   minitag: "A-Definir",
-    //   title: "A_Definir",
-    //   subtitle: "A_Definir",
-    //   ctaButtonText: "Falar com a equipe agora",
-    //   images: {
-    //     img1: imgproof1,
-    //     img2: imgproof2,
-    //     img3: imgproof3,
-    //     img4: imgproof4,
-    //     img5: imgproof5,
-    //     img6: imgproof6,
-    //   },
-    // },
+    socialProof: {
+      minitag: "A-Definir",
+      title: "A_Definir",
+      subtitle: "A_Definir",
+      ctaButtonText: "Falar com a equipe agora",
+      images: {
+        img1: imgproof1,
+        img2: imgproof2,
+        img3: imgproof3,
+        img4: imgproof4,
+        img5: imgproof5,
+        img6: imgproof6,
+      },
+    },
     emergency: {
       miniTag: <>A_Definir</>,
       title: <h1>A_Definir</h1>,
@@ -308,32 +304,75 @@ const content = {
       ctaButtonText: <>Falar agora com o escritório</>,
     },
     cardsSection: {
-      miniTag: <>A_Definir</>,
-      title: <>A_Definir</>,
-      subtitle: <>A_Definir</>,
+      miniTag: <>Nossa prática</>,
+      title: <>Por que escolher o Pascoal & Dyandra Advocacia?</>,
+      subtitle: (
+        <>
+          Atendimento próximo, estratégia sólida e foco real nos seus direitos
+          trabalhistas.
+        </>
+      ),
       cards: {
         card1: {
-          title: <>A_Definir</>,
-          icon: <>A_Definir</>,
+          title: (
+            <>
+              Atendimento presencial em Sorocaba/SP e online para todo o Brasil
+            </>
+          ),
+          icon: (
+            <>
+              <Check />
+            </>
+          ),
           link: "",
         },
         card2: {
-          title: <>A_Definir</>,
-          icon: <>A_Definir</>,
+          title: (
+            <>
+              Atuação técnica, ética e comprometida com a defesa do trabalhador
+            </>
+          ),
+          icon: (
+            <>
+              <Check />
+            </>
+          ),
           link: "",
         },
         card3: {
-          title: <>A_Definir</>,
-          icon: <>A_Definir</>,
+          title: (
+            <>Experiência em demandas envolvendo motoristas de caminhão CLT</>
+          ),
+          icon: (
+            <>
+              <Check />
+            </>
+          ),
           link: "",
         },
         card4: {
-          title: <>A_Definir</>,
-          icon: <>A_Definir</>,
+          title: <>Atendimento individualizado, sigiloso e respeitoso</>,
+          icon: (
+            <>
+              <Check />
+            </>
+          ),
         },
         card5: {
-          title: <>A_Definir</>,
-          icon: <>A_Definir</>,
+          title: <>Equipe qualificada e constantemente atualizada</>,
+          icon: (
+            <>
+              <Check />
+            </>
+          ),
+        },
+        card6: {
+          title: <>Comunicação clara e orientação acessível</>,
+          icon: (
+            <>
+              <Check />
+            </>
+          ),
         },
       },
       fraseText: (
@@ -451,11 +490,19 @@ const content = {
     },
     ctaSection: {
       miniTag: <>FALE CONOSCO</>,
-      title: <h1>Você pode estar perdendo dinheiro</h1>,
+      title: (
+        <h1>
+          No Pascoal & Dyandra Advocacia, cada demanda é conduzida com atenção,
+          seriedade e respeito às particularidades de cada caso.
+        </h1>
+      ),
       subtitle: (
         <div>
           <p className="mb-6 font-secondFont">
-            Fale com um especialista e entenda o que você pode receber.
+            Se você precisa de orientação nas áreas de Direito Trabalhista ou
+            Previdenciário, nossa equipe está à disposição para oferecer uma
+            análise jurídica responsável, fundamentada e conduzida com ética
+            profissional.
           </p>
         </div>
       ),
@@ -468,7 +515,7 @@ const content = {
           topic5: <>Agilidade para resolver sua situação</>,
         },
       },
-      ctaButtonText: <>Falar com especialista agora</>,
+      ctaButtonText: <>Falar com nossa equipe no Whatsapp</>,
       ctaButtonAriaLabel:
         "Botão para chamada de ação para contato pelo whatsapp",
     },
@@ -564,21 +611,80 @@ const content = {
       ],
     },
     diferences: {
-      miniTag: <>A_Definir</>,
-      title: <>A_Definir</>,
-      subtitle: <>A_Definir</>,
+      miniTag: <>Nossos diferenciais</>,
+      title: <>Defesa Trabalhista com Experiência Real</>,
+      subtitle: (
+        <>
+          Atendimento claro, ágil e especializado para proteger seus direitos.
+        </>
+      ),
       cards: {
         card1: {
           icon: Check,
-          text: <>A_Definir</>,
+          text: <>Atuação focada na defesa do trabalhador</>,
         },
         card2: {
           icon: Check,
-          text: <>A_Definir</>,
+          text: (
+            <>Atendimento presencial em Sorocaba e online para todo o Brasil</>
+          ),
         },
         card3: {
           icon: Check,
-          text: <>A_Definir</>,
+          text: (
+            <>Experiência em demandas envolvendo motoristas de caminhão CLT</>
+          ),
+        },
+        card4: {
+          icon: Check,
+          text: <>Clareza na orientação e comunicação jurídica</>,
+        },
+      },
+      ctaButtonText: "Agende seu atendimento",
+    },
+    preferences: {
+      miniTag: <>Nossa prática</>,
+      title: <>Por que escolher o Pascoal & Dyandra Advocacia?</>,
+      subtitle: (
+        <>
+          Atendimento próximo, estratégia sólida e foco real nos seus direitos
+          trabalhistas.
+        </>
+      ),
+      cards: {
+        card1: {
+          icon: Check,
+          text: (
+            <>
+              Atendimento presencial em Sorocaba/SP e online para todo o Brasil
+            </>
+          ),
+        },
+        card2: {
+          icon: Check,
+          text: (
+            <>
+              Atuação técnica, ética e comprometida com a defesa do trabalhador
+            </>
+          ),
+        },
+        card3: {
+          icon: Check,
+          text: (
+            <>Experiência em demandas envolvendo motoristas de caminhão CLT</>
+          ),
+        },
+        card4: {
+          icon: Check,
+          text: <>Atendimento individualizado, sigiloso e respeitoso</>,
+        },
+        card5: {
+          icon: Check,
+          text: <>Equipe qualificada e constantemente atualizada</>,
+        },
+        card6: {
+          icon: Check,
+          text: <>Comunicação clara e orientação acessível</>,
         },
       },
     },
